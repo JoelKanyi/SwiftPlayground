@@ -152,9 +152,14 @@ print("You score is \(score * 30)")
 
 
 // Function
-func addTwoNumbers(a: Int, b: Int) -> Int {
+func add(num1 a: Int, num2 b: Int) -> Int {
     return a + b
 }
 
+print(add(num1: 20, num2: 30))
 
-print(addTwoNumbers(a: 20, b: 30))
+// ignoring a value returned by a function (intentionally)
+_ = add(num1: 20, num2: 40)
+
+// Get type function
+type(of: add(num1: 24, num2: 32))
