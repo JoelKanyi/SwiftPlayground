@@ -25,7 +25,8 @@ let temparature: Double
  Operators
  */
 // +, -, *, /
-
+// ... closed range operator
+// ..< half open range operator
 
 /*
  Converting Data Types
@@ -81,6 +82,74 @@ nums.append(30)
 
 // remove
 nums.remove(at: 3)
+
+
+/*
+ Control Flows
+ */
+
+// if..else
+if score > 30 {
+    print("Good")
+} else {
+    print("Better")
+}
+
+// switch
+let day: Int = 2
+
+switch day {
+case 1:
+    print("Monday 👨‍💻")
+case 2:
+    print("Tuesday 👨‍💻")
+case 3:
+    print("Wednesday 👨‍💻")
+case 4:
+    print("Thursday 👨‍💻")
+case 5:
+    print("Friday 🍻")
+case 6:
+    print("Satarday 🎬")
+case 7:
+    print("Sunday 🙏")
+default:
+    print("Unknown Day 😱")
+}
+
+// Loops
+
+// while
+while score > 20 {
+    
+}
+
+// repeat.. while
+repeat {
+    
+} while score > 20
+
+// for loop
+for num in nums {
+    print(num)
+}
+
+for i in 1...10 {
+    print(i)
+}
+
+// stride
+for number in stride(from: 0, to: 255, by: 5) {
+    print(number)
+}
+
+
+/*
+ String Interpolation
+ */
+print("You score is \(score * 30)")
+
+
 
 // Function
 func addTwoNumbers(a: Int, b: Int) -> Int {
