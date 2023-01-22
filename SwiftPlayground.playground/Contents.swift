@@ -286,3 +286,66 @@ let (nextTitle, length) = randomAlbum()
 print("Playing next: \(nextTitle) which was release in \(length)")
 
 
+/*
+ Clusures - let us take lines of code and group it together to use elsewhere in our program
+ */
+struct Book {
+    var title: String
+    var pages: Int
+}
+
+let book1 = Book(title: "Hobit", pages: 200)
+let book2 = Book(title: "Lord of the Rings", pages: 100)
+let book3 = Book(title: "Avatar", pages: 50)
+
+let allBooks = [book1, book2, book3]
+
+let pagesSortedBooks = allBooks.sorted { $0.pages <= $1.pages }
+let titleSortedBooks = allBooks.sorted { $0.title <= $1.title }
+let booksWithLessThan50pages = allBooks.filter { $0.pages < 100 }
+
+
+/*
+ Classes & Objects
+ */
+class Appliance {
+    // properties
+    var manufacturer: String
+    var manufactureDate: String
+    var model: String
+    var voltage: Int = 0
+    var capacity: Int?
+    
+    // initializer
+    init() {
+        self.manufactureDate = "default manufacture date"
+        self.model = "default model"
+        self.manufacturer = "default manufacturer"
+        self.voltage = 0
+    }
+    
+    init(voltage: Int) {
+        self.manufactureDate = "default manufacture date"
+        self.model = "default model"
+        self.manufacturer = "default manufacturer"
+        self.voltage = voltage
+    }
+    
+    // deintializer
+    deinit {
+        
+    }
+    
+    
+    // methods
+    func getDetails() -> String {
+        var message = "\(manufacturer) manufactured a very cool \(model) on \(manufactureDate)"
+        
+        return message
+    }
+}
+
+// Instances
+var kettle = Appliance()
+var heater = Appliance(voltage: 30)
+
