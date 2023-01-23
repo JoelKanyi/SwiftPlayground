@@ -338,7 +338,7 @@ class Appliance {
     
     
     // methods
-    func getDetails() -> String {
+    final func getDetails() -> String {
         var message = "\(manufacturer) manufactured a very cool \(model) on \(manufactureDate)"
         
         return message
@@ -348,4 +348,100 @@ class Appliance {
 // Instances
 var kettle = Appliance()
 var heater = Appliance(voltage: 30)
+
+
+// Inheritance
+class Toaster : Appliance {
+//    var you: String
+//    override init(){
+//        self.you = "You"
+//    }
+    
+    func toast(){
+        
+    }
+}
+
+// Extensions
+let nName = "joel kanyi"
+nName.uppercased()
+
+extension String {
+    func removeSpaces() -> String {
+        let filteredCharacters = self.filter { $0 != " "}
+        return String(filteredCharacters)
+    }
+}
+
+print(nName.removeSpaces())
+
+
+// Computed Properties
+var myScore: Int {
+    return 20
+}
+
+
+/*
+ Protocols
+ */
+class Cow: CustomStringConvertible {
+    var description: String {
+        return "hello adopted protocol"
+    }
+}
+
+protocol MyProtocol {
+    func sayHello()
+}
+
+class Proto : MyProtocol {
+    func sayHello() {
+        print("Hello")
+    }
+}
+
+
+// Error Handling
+enum ServerError {
+    case noConnection
+    case serverNotFound
+    case authenticationRefused
+}
+
+func checkStatus(errorCode: Int) -> String {
+    
+    switch errorCode {
+    case 1:
+        print("You have no connection")
+    case 2:
+        print("Server not found")
+    case 3:
+        print("Authentication failed")
+    default:
+        print("Unknown Error Code")
+    }
+    return "Success!"
+}
+
+let result = checkStatus(errorCode: 1)
+print(result)
+
+
+// handling...
+do {
+    let result = try checkStatus(errorCode: 30)
+    print(result)
+} catch ServerError.noConnection {
+    print("No connection")
+} catch ServerError.serverNotFound {
+    print("Server Not Found")
+} catch {
+    print("The problem is : \(error)")
+}
+
+// Guard and Defer
+//guard let unwrappedName = nName else {
+//    result
+//}
 
